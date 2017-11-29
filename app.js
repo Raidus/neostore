@@ -7,11 +7,7 @@ const bodyParser = require('body-parser');
 const neo4j = require('neo4j-driver').v1;
 
 // Config
-const { NEO_URI, NEO_USER, NEO_PASS, APP_PORT } = require('./config/keys');
-
-// // Neo4j
-// const driver = neo4j.driver(NEO_URI, neo4j.auth.basic(NEO_USER, NEO_PASS));
-// const session = driver.session();
+const { APP_PORT } = require('./config/keys');
 
 const app = express();
 
