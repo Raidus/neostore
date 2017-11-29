@@ -1,0 +1,25 @@
+{
+  "name": "neostore",
+  "version": "1.0.0",
+  "description": "Playground for Neo4j",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": "git@github.com:Raidus/neostore.git",
+  "author": "Willy Raider <willy.raider@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-promise-router": "^2.0.0",
+    "morgan": "^1.9.0",
+    "neo4j-driver": "^1.5.0",
+    "winston": "next"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

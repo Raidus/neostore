@@ -1,0 +1,70 @@
+<% include ../views/partials/header %>
+
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#addproduct" aria-expanded="false" aria-controls="addproduct">
+  Add New Product
+</a>
+
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#addmerchant" aria-expanded="false" aria-controls="addmerchant">
+  Add New Merchant
+</a>
+
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#connectselling" aria-expanded="false" aria-controls="connectselling">
+  Connect Merchants with Products
+</a>
+
+
+<br></br>
+
+<div class="collapse" id="addproduct">
+  <div class="well">
+  <h3>Add New Product</h3>
+    <form method="POST" action="/product/add">
+        <input type="text" name="name" placeholder="Name">
+        <input type="submit" value="Submit" class="btn btn-default btn-sm">
+    </form>
+   </div>
+</div>
+
+
+<div class="collapse" id="addmerchant">
+  <div class="well">
+  <h3>Add New Merchant</h3>
+    <form method="POST" action="/merchant/add">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="geo" placeholder="Country">
+        <input type="submit" value="Submit" class="btn btn-default btn-sm">
+    </form>
+   </div>
+</div>
+
+
+<div class="collapse" id="connectselling">
+  <div class="well">
+ <h3>Connect Merchant with Products</h3>
+    <form method="POST" action="/selling/connect">
+        <input type="text" name="name1" placeholder="Merchant">
+        <input type="text" name="name2" placeholder="Product">
+        <input type="submit" value="Submit" class="btn btn-default btn-sm">
+    </form>
+   </div>
+</div>
+
+
+<h3>Products</h3>
+<div class="row">
+<% products.forEach(function(product){ %>
+    <div class="col-md-2">
+    <div class="well"><i class="fa fa-user"></i> <a href="/product/<%= product.id %>"><%= product.name %></a></div>
+    </div>
+<% }) %>
+</div>
+
+<h3>Merchants</h3>
+<div class="row">
+<% merchants.forEach(function(merchant){ %>
+ <div class="col-md-2">
+    <div class="well"><i class="fa fa-map-marker"></i>  <%= merchant.name %>, <%= merchant.geo %></div>
+   </div>
+<% }) %>
+</div>
+<% include ../views/partials/footer %>
